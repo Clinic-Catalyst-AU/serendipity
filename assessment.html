@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Skin Assessment - Serendipity Medi Spa, Canning Vale</title>
+<meta name="robots" content="noindex, nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Raleway:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--sage:#ACB3AA;--sage-dark:#7F847B;--sage-light:#D4D6D1;--mist:#F3F4F1;--ink:#2E322D;--slate:#4F5F6B;--rose:#D43858;--white:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Lato,Arial,sans-serif;color:var(--ink);background:var(--mist);min-height:100vh;-webkit-font-smoothing:antialiased}
+.demo{background:var(--slate);color:#fff;text-align:center;font-size:.75rem;letter-spacing:.06em;padding:.5rem 1rem}
+header{background:#fff;border-bottom:1px solid var(--sage-light);padding:1rem 1.2rem;text-align:center}
+.logo{font-family:Raleway,sans-serif;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:var(--sage-dark);font-size:1.05rem}
+.logo small{display:block;font-family:Lato,sans-serif;letter-spacing:.2em;font-size:.62rem;color:var(--sage-dark);margin-top:.15rem;font-style:italic}
+.wrap{max-width:640px;margin:0 auto;padding:2rem 16px 3rem}
+.hero{text-align:center;margin-bottom:1.6rem}
+.hero .eyebrow{font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--rose);font-weight:700}
+.hero h1{font-family:Raleway,sans-serif;font-weight:600;font-size:clamp(1.5rem,5vw,2.1rem);margin:.5rem 0 .6rem;line-height:1.2}
+.hero p{color:#5b6059;line-height:1.6}
+.bar{height:6px;background:var(--sage-light);border-radius:6px;overflow:hidden;margin-bottom:1.4rem}
+.bar i{display:block;height:100%;width:0;background:var(--sage-dark);transition:width .35s}
+.panel{background:#fff;border:1px solid var(--sage-light);border-radius:14px;padding:1.6rem 1.3rem;box-shadow:0 10px 30px rgba(46,50,45,.06)}
+.step{display:none}.step.on{display:block}
+.q{font-family:Raleway,sans-serif;font-weight:600;font-size:1.15rem;margin-bottom:.3rem}
+.hint{font-size:.85rem;color:#6d726b;margin-bottom:1.1rem}
+.opts{display:grid;gap:.6rem}
+.opt{border:1.5px solid var(--sage-light);border-radius:10px;padding:.9rem 1rem;background:#fff;text-align:left;font:inherit;font-size:.95rem;cursor:pointer;transition:all .2s;color:var(--ink)}
+.opt:hover{border-color:var(--sage-dark)}
+.opt.sel{border-color:var(--sage-dark);background:var(--mist)}
+.opt b{display:block;font-weight:700}
+.opt span{font-size:.82rem;color:#6d726b}
+label{display:block;font-size:.8rem;font-weight:700;margin:.8rem 0 .3rem}
+input[type=text],input[type=email],input[type=tel]{width:100%;padding:.8rem .9rem;border:1.5px solid var(--sage-light);border-radius:10px;font:inherit;font-size:1rem}
+.consent{display:flex;gap:.6rem;align-items:flex-start;font-size:.8rem;color:#5b6059;margin-top:1rem;line-height:1.5}
+.nav{display:flex;justify-content:space-between;gap:.8rem;margin-top:1.4rem}
+.btn{border:0;border-radius:40px;padding:.85rem 1.6rem;font:inherit;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:.78rem;cursor:pointer}
+.btn.main{background:var(--sage-dark);color:#fff}
+.btn.main:disabled{opacity:.4;cursor:not-allowed}
+.btn.ghost{background:transparent;color:var(--sage-dark)}
+.btn.rose{background:var(--rose);color:#fff;text-decoration:none;display:inline-block}
+.result h2{font-family:Raleway,sans-serif;font-weight:600;font-size:1.5rem;margin:.3rem 0 .6rem}
+.rec{border:1px solid var(--sage-light);border-radius:12px;padding:1rem 1.1rem;margin:.8rem 0;background:var(--mist)}
+.rec h3{font-family:Raleway,sans-serif;font-weight:700;font-size:1rem;margin-bottom:.25rem}
+.rec p{font-size:.9rem;line-height:1.55;color:#4d524c}
+.rec .price{color:var(--rose);font-weight:700}
+.note{font-size:.75rem;color:#7c8179;margin-top:1rem;line-height:1.5}
+footer{text-align:center;font-size:.75rem;color:#7c8179;padding:0 16px 2rem;line-height:1.6}
+</style>
+</head>
+<body>
+<div class="demo">Demo for Serendipity Medi Spa - answers are not sent anywhere</div>
+<header><div class="logo">Serendipity<small>Medi Spa &middot; Canning Vale</small></div></header>
+<div class="wrap">
+  <div class="hero">
+    <p class="eyebrow">Free skin assessment</p>
+    <h1>Not sure where to start?<br>Let's find what your skin needs.</h1>
+    <p>Five quick questions. We'll suggest a treatment to start with, and our team will be in touch to help you book.</p>
+  </div>
+  <div class="bar"><i id="bar"></i></div>
+  <div class="panel">
+    <div class="step on" data-k="concern">
+      <p class="q">What would you most love help with?</p>
+      <p class="hint">Choose the one that matters most right now.</p>
+      <div class="opts">
+        <button class="opt" data-v="firm"><b>Fine lines and firmness</b><span>Skin that feels less firm than it used to</span></button>
+        <button class="opt" data-v="pigment"><b>Pigmentation, sun spots or redness</b><span>Uneven tone, spots or flushing</span></button>
+        <button class="opt" data-v="dull"><b>Dull, tired or dry skin</b><span>Missing its glow</span></button>
+        <button class="opt" data-v="breakout"><b>Breakouts or congestion</b><span>Blocked pores, spots or scarring</span></button>
+        <button class="opt" data-v="relax"><b>I just need to switch off</b><span>Time out, a massage, a pamper</span></button>
+      </div>
+    </div>
+    <div class="step" data-k="type">
+      <p class="q">How would you describe your skin?</p>
+      <p class="hint">Your best guess is perfect.</p>
+      <div class="opts">
+        <button class="opt" data-v="dry"><b>Dry or tight</b></button>
+        <button class="opt" data-v="oily"><b>Oily or shiny</b></button>
+        <button class="opt" data-v="combo"><b>A bit of both</b></button>
+        <button class="opt" data-v="sensitive"><b>Sensitive or easily red</b></button>
+        <button class="opt" data-v="unsure"><b>Not sure</b></button>
+      </div>
+    </div>
+    <div class="step" data-k="age">
+      <p class="q">Which age range are you in?</p>
+      <p class="hint">Skin changes over time, so this helps us tailor it.</p>
+      <div class="opts">
+        <button class="opt" data-v="u30"><b>Under 30</b></button>
+        <button class="opt" data-v="30"><b>30 to 44</b></button>
+        <button class="opt" data-v="45"><b>45 to 59</b></button>
+        <button class="opt" data-v="60"><b>60 and over</b></button>
+      </div>
+    </div>
+    <div class="step" data-k="tried">
+      <p class="q">What have you tried so far?</p>
+      <p class="hint">No wrong answers.</p>
+      <div class="opts">
+        <button class="opt" data-v="none"><b>Nothing yet</b></button>
+        <button class="opt" data-v="facials"><b>Facials now and then</b></button>
+        <button class="opt" data-v="advanced"><b>Peels, needling or IPL</b></button>
+        <button class="opt" data-v="home"><b>Just my products at home</b></button>
+      </div>
+    </div>
+    <div class="step" data-k="when">
+      <p class="q">Anything coming up?</p>
+      <p class="hint">So we can plan the right timing.</p>
+      <div class="opts">
+        <button class="opt" data-v="soon"><b>An event in the next month</b></button>
+        <button class="opt" data-v="later"><b>Something special in a few months</b></button>
+        <button class="opt" data-v="me"><b>It's just for me</b></button>
+        <button class="opt" data-v="gift"><b>I'm buying for someone else</b></button>
+      </div>
+    </div>
+    <div class="step" data-k="details">
+      <p class="q">Where should we send your suggestion?</p>
+      <p class="hint">Our team will follow up personally to help you book.</p>
+      <label for="fn">First name</label><input id="fn" type="text" autocomplete="given-name">
+      <label for="em">Email</label><input id="em" type="email" autocomplete="email">
+      <label for="mb">Mobile</label><input id="mb" type="tel" autocomplete="tel" placeholder="04xx xxx xxx">
+      <div class="consent"><input id="ok" type="checkbox"><span>Yes, Serendipity Medi Spa can contact me about my assessment and occasional offers. I can opt out any time.</span></div>
+    </div>
+    <div class="step result" data-k="result" id="result"></div>
+    <div class="nav" id="nav">
+      <button class="btn ghost" id="back">Back</button>
+      <button class="btn main" id="next" disabled>Next</button>
+    </div>
+  </div>
+  <p class="note">This assessment suggests where to start. It is not a diagnosis, and results vary from person to person. Your therapist will confirm the right plan at your consultation.</p>
+</div>
+<footer>Serendipity Medi Spa &middot; Unit 1, Ranford Rd Shopping Centre, Cnr Ranford and Campbell Rd, Canning Vale &middot; 08 9456 3091</footer>
+<script>
+const BOOK="https://phorest.com/salon/serendipitymedispa1";
+const steps=[...document.querySelectorAll('.step')];
+const ans={};let i=0;
+const next=document.getElementById('next'),back=document.getElementById('back'),bar=document.getElementById('bar');
+const recs={
+ firm:[["Skin Needling","Encourages your skin's own collagen for firmer, smoother texture. A course of three is recommended.","Face from $329, or a course of three and save 20%"],["RF Skin Tightening","Gentle warmth to help skin feel firmer, with built-in temperature sensing for comfort.",""]],
+ pigment:[["IPL Skin Rejuvenation","Targets pigmentation, redness and sun damage. Most people see the best results from a course.",""],["Bespoke Skin Consultation","We look closely at your skin first, then build your plan.",""]],
+ dull:[["Ultraceuticals Signature Facial","Relax, refine and hydrate, with a face, neck and décolletage massage.","$179"],["Radiant + Refreshed","Our spring special. Choose two or three of our most popular treatments.","2 for $159, 3 for $189"]],
+ breakout:[["Acne Treatments","A tailored plan for breakouts and congestion, starting with a proper look at your skin.",""],["Bespoke Skin Consultation","The best place to start, so your plan suits your skin.",""]],
+ relax:[["Pure Delight","Two hours of full body massage followed by our Deluxe Facial.","$289"],["60 minute Aroma Massage","Time out for tired muscles and a busy mind.",""]]
+};
+function show(){
+ steps.forEach((s,n)=>s.classList.toggle('on',n===i));
+ bar.style.width=Math.round(i/(steps.length-1)*100)+'%';
+ back.style.visibility=i===0||i===steps.length-1?'hidden':'visible';
+ document.getElementById('nav').style.display=i===steps.length-1?'none':'flex';
+ const k=steps[i].dataset.k;
+ next.textContent=k==='details'?'See my suggestion':'Next';
+ next.disabled=k==='details'?!valid():!ans[k];
+}
+function valid(){return document.getElementById('fn').value.trim()&&/\S+@\S+\.\S+/.test(document.getElementById('em').value)&&document.getElementById('mb').value.replace(/\D/g,'').length>=9&&document.getElementById('ok').checked}
+document.querySelectorAll('.step .opt').forEach(b=>b.addEventListener('click',()=>{
+ const s=b.closest('.step');s.querySelectorAll('.opt').forEach(o=>o.classList.remove('sel'));b.classList.add('sel');ans[s.dataset.k]=b.dataset.v;next.disabled=false;
+ setTimeout(()=>{if(i<steps.length-2){i++;show();}},220);
+}));
+['fn','em','mb','ok'].forEach(id=>document.getElementById(id).addEventListener('input',()=>{next.disabled=!valid()}));
+document.getElementById('ok').addEventListener('change',()=>{next.disabled=!valid()});
+back.addEventListener('click',()=>{if(i>0){i--;show();}});
+next.addEventListener('click',()=>{
+ if(steps[i].dataset.k==='details'){render();}
+ i++;show();
+});
+function render(){
+ const name=document.getElementById('fn').value.trim();
+ const gift=ans.when==='gift';
+ const list=gift?recs.relax:recs[ans.concern];
+ const soon=ans.when==='soon';
+ let h=`<p class="hint" style="margin:0">Thanks, ${name.replace(/[<>&"]/g,'')}</p><h2>${gift?'The perfect gift':'Where we would start'}</h2>`;
+ h+=list.map(r=>`<div class="rec"><h3>${r[0]}</h3><p>${r[1]}${r[2]?` <span class="price">${r[2]}</span>`:''}</p></div>`).join('');
+ if(soon&&!gift) h+=`<p class="hint">With an event coming up, book your consultation soon so we can time your treatments well.</p>`;
+ h+=`<p class="hint">One of our team will be in touch to help you book. Or book now:</p><a class="btn rose" href="${gift?'https://serendipitymedispa.com.au/shop-egift-vouchers/':BOOK}" target="_blank" rel="noopener">${gift?'Buy a gift voucher':'Book my consultation'}</a>`;
+ document.getElementById('result').innerHTML=h;
+}
+show();
+</script>
+</body>
+</html>
